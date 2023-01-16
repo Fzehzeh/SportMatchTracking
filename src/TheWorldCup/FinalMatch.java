@@ -66,9 +66,31 @@ public class FinalMatch extends SemiFinalMatch {
         int touchCount=random.nextInt(10,20);
 
         Tournament.eliminatedTeam.remove(looserTeam);
-        Tournament.addFinalMatch(score1,score2,referee,place,penalties,extraTime,team1,team2,winnerTeam,
-                ballPossessionPercentage,missedPositionCount, touchCount,cardsCount,cournerCount,offsideCount,
-                totalShoot,foulCount,penaltyCount);
+
+        this.setScore1(score1);
+        this.setScore2(score2);
+        this.setReferee(referee);
+        this.setMatchPlace(place);
+        this.setpenalties(penalties);
+        this.setextraTime(extraTime);
+        this.setTeams(team1,0);
+        this.setTeams(team2,1);
+        this.setWinnerTeam(winnerTeam);
+        this.setBallPossessionPercentage(ballPossessionPercentage);
+        this.setTouchCount(touchCount);
+        this.setCardsCount(cardsCount);
+        this.setCournerCount(cournerCount);
+        this.setOffsideCount(offsideCount);
+        this.setTotalShoot(totalShoot);
+        this.setMissedPositionCount(missedPositionCount);
+        this.setFoulCount(foulCount);
+        this.setPenaltyCount(penaltyCount);
+
+        Tournament.getTeamsMatches().add(this);
+
+        team1.setMatches(this);
+        team2.setMatches(this);
+
     }
 
     public double getBallPossessionPercentage(){

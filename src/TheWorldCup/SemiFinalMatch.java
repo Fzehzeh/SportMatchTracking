@@ -62,8 +62,27 @@ public class SemiFinalMatch extends QuarterFinalMatch{
         int cournerCount=random.nextInt(7,12);
         int offsideCount=random.nextInt(3,8);
         Tournament.eliminatedTeam.remove(looserTeam);
-        Tournament.addSemiFinalMatch(score1,score2,referee,place,penalties,extraTime,team1,team2,
-                winnerTeam,totalShoot,foulCount, penaltyCount,cardsCount,cournerCount,offsideCount);
+
+        this.setScore1(score1);
+        this.setScore2(score2);
+        this.setReferee(referee);
+        this.setMatchPlace(place);
+        this.setpenalties(penalties);
+        this.setextraTime(extraTime);
+        this.setTeams(team1,0);
+        this.setTeams(team2,1);
+        this.setWinnerTeam(winnerTeam);
+        this.setCardsCount(cardsCount);
+        this.setCournerCount(cournerCount);
+        this.setOffsideCount(offsideCount);
+        this.setTotalShoot(totalShoot);
+        this.setFoulCount(foulCount);
+        this.setPenaltyCount(penaltyCount);
+        Tournament.getTeamsMatches().add(this);
+
+        team1.setMatches(this);
+        team2.setMatches(this);
+
     }
     public void createFixture(){
         for(int i=0; i<2; i++){

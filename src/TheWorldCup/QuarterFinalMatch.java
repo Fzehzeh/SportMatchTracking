@@ -90,8 +90,24 @@ public class QuarterFinalMatch extends Match  {
             int penaltyCount=random.nextInt(0,3);
 
         Tournament.eliminatedTeam.remove(looserTeam);
-        Tournament.addQuarterFinalMatch(score1,score2,referee,place,penalties,extraTime,team1,team2,
-                winnerTeam,totalShoot,foulCount, penaltyCount);
+        this.setScore1(score1);
+        this.setScore1(score1);
+        this.setScore2(score2);
+        this.setReferee(referee);
+        this.setMatchPlace(place);
+        this.setpenalties(penalties);
+        this.setextraTime(extraTime);
+        this.setTeams(team1,0);
+        this.setTeams(team2,1);
+        this.setWinnerTeam(winnerTeam);
+        this.setTotalShoot(totalShoot);
+        this.setFoulCount(foulCount);
+        this.setPenaltyCount(penaltyCount);
+        Tournament.getTeamsMatches().add(this);
+
+        team1.setMatches(this);
+        team2.setMatches(this);
+
     }
     @Override
     void ShowStatistics(){

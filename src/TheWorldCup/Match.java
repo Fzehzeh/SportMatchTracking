@@ -16,7 +16,7 @@ public class Match {
         System.out.println("Referee:" + referee);
         System.out.println("Penalties: " + penalties);
         System.out.println("Extra Time :" + extraTime);
-        System.out.println("WINNER TEAM :" + winnerTeam);
+        System.out.println("WINNER TEAM :" + winnerTeam.getTeamName());
 
 
     }

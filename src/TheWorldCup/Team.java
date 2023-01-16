@@ -63,6 +63,22 @@ public class Team {
         this.matches.add(match);
     }
 
+    public void ShowMatches(){
+        for (Match match: matches) {
+            if(match instanceof FinalMatch){
+                SemiFinalMatch fmatch= (FinalMatch)match ;
+                fmatch.ShowStatistics();
+            }
+            else if (match instanceof SemiFinalMatch) {
+                SemiFinalMatch smatch= (SemiFinalMatch)match ;
+                smatch.ShowStatistics();
+            }
+            else if (match instanceof QuarterFinalMatch){
+                QuarterFinalMatch qmatch= (QuarterFinalMatch) match;
+                qmatch.ShowStatistics();
+            }
+        }
+    }
 
 
 
